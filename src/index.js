@@ -1,15 +1,12 @@
 import './styles.css';
-import menuTemplate from './templates/list-item.hbs';
+import { firstUpload, changeThem } from './js/body-style-module.js';
 
 
-//menuTemplate('TestName')
+console.log(labelRef);
 
-const menuData = {
-  name: 'Eat it createElement, templates rule!',
-};
 
-const markup = menuTemplate('TestName'); // html разметка с подставленным значениями
+firstUpload();
 
-const source = document.querySelector('.js-menu');
 
-source.innerHTML = markup;
+const labelRef = document.querySelector('#theme-switch-toggle');
+labelRef.addEventListener('click', () => changeThem());
