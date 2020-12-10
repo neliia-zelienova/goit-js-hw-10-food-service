@@ -1,7 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
-const paths = require('../utils/paths');
+const paths = require('../utils/paths'); 
 
 module.exports = env => ({
   mode: env.mode,
@@ -12,6 +12,7 @@ module.exports = env => ({
   },
   module: {
     rules: [
+       { test: /\.handlebars$/, loader: "handlebars-loader" },
       {
         test: /\.js$/,
         include: paths.SRC_DIR,
@@ -60,11 +61,7 @@ module.exports = env => ({
       {
         test: /\.html$/,
         use: 'html-loader',
-      },
-      {
-        test: /\.hbs$/,
-        use: 'handlebars-loader',
-      },
+      }
     ],
   },
   plugins: [
