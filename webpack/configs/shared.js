@@ -12,7 +12,7 @@ module.exports = env => ({
   },
   module: {
     rules: [
-       { test: /\.handlebars$/, loader: "handlebars-loader" },
+      
       {
         test: /\.js$/,
         include: paths.SRC_DIR,
